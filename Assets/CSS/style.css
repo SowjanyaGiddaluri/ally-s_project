@@ -313,12 +313,7 @@ body {
     padding-bottom: 40px;
 }
 
-.bg-flow-main-head-con {
-    display: flex;
-    justify-content: center; 
-    align-items: center;     
-    height: 100%;             
-}
+
 
 .bg-flow-banner-main-head {
     color: #fff;
@@ -328,6 +323,12 @@ body {
     line-height: 1.15;
     padding-top: 40px;
     text-align: center;
+}
+@media (max-width: 575.98px){
+    .bg-flow-banner-main-head{
+        font-size: 40px;
+        padding: 20px;
+    }
 }
 .flowchart-image{
     width: 100%;
