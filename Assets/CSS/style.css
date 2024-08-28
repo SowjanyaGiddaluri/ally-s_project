@@ -6,6 +6,20 @@
 }
 body {
     font-family: 'Figtree', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+@media (max-width: 575.98px){
+    
+    .row{
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .col-12{
+        padding-right: 0;
+        padding-left: 0;
+    }
 }
 
 /*.navbar {
@@ -122,20 +136,31 @@ body {
 
 
 /* banner section 2*/
-/*.bg-ally-banner-section-2 {
-    
+.bg-ally-banner-section-2 {
+    background-image: url("../images/opoy7.jpg");
     height: 100%;
     width: 100%;
-    background-size: cover; 
-}*/
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+.card-container{
+    max-width: 800px;
+    margin: auto;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
 
 .bg-ally-banner-section-2-head {
-    color: #000;
+    color: #fff;
     margin-bottom: 0;
     font-size: 64px;
     font-weight: bold;
     line-height: 1.15;
     padding-top: 40px;
+    text-align: center;
 }
 
 .bg-ally-banner-section-2-para {
@@ -144,8 +169,9 @@ body {
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.5;
-    color: #5d5d5d;
+    color: #f2f2f2;
     padding-top: 20px;
+    text-align: center;
 }
 /* banner section 2 */
 
@@ -153,16 +179,22 @@ body {
 
 /* ally card section */
 .bg-ally-card-section {
+    background-color:#141313;
     padding-top: 40px;
     padding-bottom: 40px;
 }
 
 .ally-card-section {
-    background-color: #12141c;
+    background-color: #2c2c2c;
     overflow: hidden;
     transition: .3s ease;
     padding: 20px;
+    border: 2px solid transparent;
+    transition: .3s ease-in-out;
     
+}
+.ally-card-section:hover{
+    border: 2px solid #0069d9;
 }
 .ally-card-section i{
     color:#0069d9;
@@ -276,6 +308,7 @@ body {
 
 /* ally flowchart banner section */
 .bg-flow-banner-section{
+    background-color: #141313;
     padding-top: 40px;
     padding-bottom: 40px;
 }
@@ -288,13 +321,16 @@ body {
 }
 
 .bg-flow-banner-main-head {
-    color: #171717;
+    color: #fff;
     margin-bottom: 0;
     font-size: 64px;
     font-weight: bold;
     line-height: 1.15;
     padding-top: 40px;
     text-align: center;
+}
+.flowchart-image{
+    width: 100%;
 }
 /* ally flow chart banner section */
 
@@ -367,3 +403,69 @@ body {
 }
 
 /* ally case section card */
+
+
+
+/* cursor */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    animation: cursorAnim .5s infinite alternate;
+    pointer-events: none;
+  }
+  
+  .cursor::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 8px solid #0069d9;
+    border-radius: 50%;
+    opacity: .5;
+    top: -8px;
+    left: -8px;
+    animation: cursorAnim2 .5s infinite alternate;
+  }
+  
+  @keyframes cursorAnim {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(.7);
+    }
+  }
+  
+  @keyframes cursorAnim2 {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(.4);
+    }
+  }
+  
+  @keyframes cursorAnim3 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+  }
+  
+  .expand {
+    animation: cursorAnim3 .5s forwards;
+    border: 1px solid #0069d9;
+  }
+  
+/* cursor */
