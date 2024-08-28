@@ -307,13 +307,36 @@ body {
 
 
 /* ally flowchart banner section */
-.bg-flow-banner-section{
+.bg-flow-banner-section {
     background-color: #141313;
     padding-top: 40px;
     padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%; 
 }
 
+.bg-flow-banner-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.bg-flow-banner-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.bg-flow-banner-section .col-lg-7, .col-lg-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 .bg-flow-banner-main-head {
     color: #fff;
@@ -324,14 +347,135 @@ body {
     padding-top: 40px;
     text-align: center;
 }
-@media (max-width: 575.98px){
-    .bg-flow-banner-main-head{
-        font-size: 40px;
-        padding: 20px;
+
+@media (max-width: 575.98px) {
+    .bg-flow-banner-main-head {
+        font-size: 32px; 
+        padding: 10px; 
+    }
+    
+    .flowchart-image {
+        max-width: 90%; 
+        margin-top: 15px; 
+    }
+
+    .pentagon-container {
+        display: none; 
     }
 }
-.flowchart-image{
+@media (max-width: 991.98px) { 
+    .pentagon-container {
+        display: none;
+    }
+}
+
+@media(min-width: 992px) { 
+    .pentagon-container {
+        display: block; 
+    }
+}
+
+.flowchart-image {
     width: 100%;
+    max-width: 600px; 
+    margin-top: 20px;
+}
+
+.pentagon-container {
+    transform-style: preserve-3d;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform: rotateX(90deg) rotateY(-36deg);
+    animation: play 12s infinite;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    margin-top: 20px;
+}
+
+.pentagon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0009;
+    clip-path: polygon(50% 0%, 97.5528% 34.5492%, 79.3893% 90.4508%, 20.6107% 90.4508%, 2.4471% 34.5492%);
+    z-index: 1;
+}
+
+.pentagon::before, .pentagon::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    background: linear-gradient(rgb(0, 140, 255), rgb(0, 157, 255));
+    clip-path: inherit;
+    z-index: -1;
+}
+
+.pentagon::after {
+    width: 80%;
+    height: 80%;
+    background: #222;
+}
+
+.pentagon.bottomBase {
+    transform: rotateX(270deg) translateZ(195px) rotateZ(36deg);
+}
+
+.pentagon.topBase {
+    transform: rotateX(90deg) translateZ(195px) rotateZ(36deg);
+}
+
+.pentagon.bottom {
+    transform: translateY(29%) rotateY(calc(var(--deg) * 72deg)) translateZ(176px) rotateX(333.33deg);
+}
+
+.pentagon.top {
+    transform: rotateZ(180deg) translateY(29%) rotateY(calc(var(--deg) * 36deg)) translateZ(176px) rotateX(333.33deg);
+}
+
+@keyframes play {
+    0% {
+        transform: rotateX(90deg) rotateY(-36deg);
+    }
+    8.3% {
+        transform: rotateX(27deg) rotateY(0deg);
+    }
+    16.6% {
+        transform: rotateX(27deg) rotateY(-72deg);
+    }
+    24.9% {
+        transform: rotateX(27deg) rotateY(-144deg);
+    }
+    33.3% {
+        transform: rotateX(27deg) rotateY(-216deg);
+    }
+    41.6% {
+        transform: rotateX(27deg) rotateY(-288deg);
+    }
+    49.9% {
+        transform: rotateX(270deg) rotateY(36deg);
+    }
+    58.3% {
+        transform: rotateX(206.5deg) rotateY(144deg);
+    }
+    66.6% {
+        transform: rotateX(206.5deg) rotateY(72deg);
+    }
+    74.9% {
+        transform: rotateX(206.5deg) rotateY(0deg);
+    }
+    83.3% {
+        transform: rotateX(206.5deg) rotateY(-72deg);
+    }
+    91.6% {
+        transform: rotateX(206.5deg) rotateY(-144deg);
+    }
+    100% {
+        transform: rotateX(90deg) rotateY(-36deg);
+    }
 }
 /* ally flow chart banner section */
 
@@ -470,3 +614,6 @@ body {
   }
   
 /* cursor */
+
+
+
